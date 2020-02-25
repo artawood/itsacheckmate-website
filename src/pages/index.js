@@ -1,67 +1,28 @@
 import { graphql } from 'gatsby'
-import React from 'react'
 import get from 'lodash/get'
+import HeroImg from '../../content/images/redesign-itsachecmate-concept-graphic-112719_POSlogo_v01.png'
+import React from 'react'
 
-import Post from 'templates/post'
-import Meta from 'components/meta'
+import { siteMetadata } from '../../gatsby-config'
 import Layout from 'components/layout'
+import Meta from 'components/meta'
+import Icon from 'components/icon'
 
-const BlogIndex = ({ data, location }) => {
-  const posts = get(data, 'remark.posts')
-  return (
-    <Layout location={location}>
-      <Meta site={get(data, 'site.meta')} />
-      {posts.map(({ post }, i) => (
-        <Post
-          data={post}
-          options={{
-            isIndex: true,
-          }}
-          key={i}
-        />
-      ))}
-    </Layout>
-  )
+class Home extends React.Component {
+  render() {
+    return (
+      <Layout location={location}>
+        <Meta site={siteMetadata} title="Home" />
+        <div className="jumbotron jumbotron-fluid text-center bg-white">
+          <h1 className="display-4">
+            Integrate 3rd Party Orders Directly to Your{' '}
+            <span className="text-primary font-italic">POS</span>
+          </h1>
+          <img src={HeroImg} />
+        </div>
+      </Layout>
+    )
+  }
 }
 
-export default BlogIndex
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    site {
-      meta: siteMetadata {
-        title
-        description
-        url: siteUrl
-        author
-        twitter
-        adsense
-      }
-    }
-    remark: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      posts: edges {
-        post: node {
-          html
-          frontmatter {
-            layout
-            title
-            path
-            category
-            tags
-            description
-            date(formatString: "YYYY/MM/DD")
-            image {
-              childImageSharp {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+export default Home
