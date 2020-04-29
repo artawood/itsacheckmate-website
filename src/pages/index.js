@@ -5,6 +5,9 @@ import Meta from 'components/meta'
 import VideoTestimonials from 'components/VideoTestimonials/index'
 import Hero from 'components/Hero/index'
 import HappyCustomers from 'components/HappyCustomers/index'
+import Featurettes from 'components/Featurettes/index'
+import Pricing from 'components/Pricing/index'
+import Integration from 'components/Integration/index'
 
 class Home extends React.Component {
   render() {
@@ -14,6 +17,9 @@ class Home extends React.Component {
         <Hero />
         <VideoTestimonials />
         <HappyCustomers />
+        <Featurettes />
+        <Pricing />
+        <Integration />
       </Layout>
     )
   }
