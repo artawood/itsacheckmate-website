@@ -11,7 +11,9 @@ class Hero extends React.Component {
             Integrate 3rd Party Orders <br /> Directly to Your
             <span className="text-primary font-italic"> POS</span>
           </h1>
-          <img src={HeroImg} />
+          <div className="container-fluid px-lg-5 mt-lg-5">
+            <img src={HeroImg} />
+          </div>
         </div>
         <Benefits />
       </section>

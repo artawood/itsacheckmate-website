@@ -28,7 +28,9 @@
     "gatsby-remark-smartypants": "2.1.21",
     "gatsby-source-filesystem": "2.1.48",
     "gatsby-transformer-remark": "2.6.53",
-    "gatsby-transformer-sharp": "2.3.14"
+    "gatsby-transformer-sharp": "2.3.14",
+    "jquery": "^3.5.0",
+    "popper.js": "^1.16.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.27",
